@@ -1,7 +1,7 @@
 import os 
 from languageTranslater import *
-from snippingTool import *
-
+#from snippingTool import *
+import snippingTool
 
 from tkinter import *
 
@@ -25,9 +25,9 @@ class mainWindow(object):
         self.master=master
         self.b=Button(master,text="Pick language to copy, default english",command=self.popup)
         self.b.pack()
-        self.b2=Button(master,text="copy",command=lambda: (os.system('python snippingTool.py'), (copyText(self.entryValue()))))
+        self.b2=Button(master,text="copy",command=lambda: (os.system('python src\snippingTool.py'), (copyText(self.entryValue()))))
         self.b2.pack()
-        self.b3=Button(master,text="copy and translate",command=lambda: (os.system('python snippingTool.py'), translate(copyText(self.entryValue()))))
+        self.b3=Button(master,text="copy and translate",command=lambda: (os.system('python src\snippingTool.py'), translate(copyText(self.entryValue()))))
         self.b3.pack()
 
     def popup(self):

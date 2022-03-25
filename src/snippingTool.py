@@ -15,8 +15,9 @@ class Application():
 
         # root.configure(background = 'red')
         # root.attributes("-transparentcolor","red")
-
         root.attributes("-transparent", "blue")
+        '''
+        
         root.geometry('400x50+200+200')  # set new geometry
         root.title('Lil Snippy')
         self.menu_frame = Frame(master, bg="blue")
@@ -24,15 +25,15 @@ class Application():
 
         self.buttonBar = Frame(self.menu_frame,bg="")
         self.buttonBar.pack(fill=BOTH,expand=YES)
-
         self.snipButton = Button(self.buttonBar, width=3, command=self.createScreenCanvas, background="green")
         self.snipButton.pack(expand=YES)
-
+        '''
         self.master_screen = Toplevel(root)
         self.master_screen.withdraw()
         self.master_screen.attributes("-transparent", "blue")
         self.picture_frame = Frame(self.master_screen, background = "blue")
         self.picture_frame.pack(fill=BOTH, expand=YES)
+        self.createScreenCanvas()
 
     def takeBoundedScreenShot(self, x1, y1, x2, y2):
         im = pyautogui.screenshot(region=(x1, y1, x2, y2))
@@ -51,7 +52,6 @@ class Application():
         self.screenCanvas.bind("<ButtonPress-1>", self.on_button_press)
         self.screenCanvas.bind("<B1-Motion>", self.on_move_press)
         self.screenCanvas.bind("<ButtonRelease-1>", self.on_button_release)
-
         self.master_screen.attributes('-fullscreen', True)
         self.master_screen.attributes('-alpha', .3)
         self.master_screen.lift()
