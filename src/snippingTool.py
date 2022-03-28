@@ -1,6 +1,5 @@
 from tkinter import *
 import pyautogui
-import os
 import datetime
 #Snpping tool taken from https://stackoverflow.com/questions/49901928/how-to-take-a-screenshot-with-python-using-a-click-and-drag-method-like-snipping
 class Application():
@@ -16,8 +15,7 @@ class Application():
         # root.configure(background = 'red')
         # root.attributes("-transparentcolor","red")
         root.attributes("-transparent", "blue")
-        '''
-        
+        '''   
         root.geometry('400x50+200+200')  # set new geometry
         root.title('Lil Snippy')
         self.menu_frame = Frame(master, bg="blue")
